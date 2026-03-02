@@ -1,20 +1,55 @@
 public class OOPSBannerApp {
+
+    // 1. Method to generate the pattern for the letter 'O'
+    public static String[] getOPattern() {
+        return new String[] {
+            "  *** ", 
+            " ** ** ", 
+            " ** ** ", 
+            " ** ** ", 
+            " ** ** ", 
+            " ** ** ", 
+            "  *** "
+        };
+    }
+
+    // 2. Method to generate the pattern for the letter 'P'
+    public static String[] getPPattern() {
+        return new String[] {
+            " ***** ", 
+            " ** **", 
+            " ** **", 
+            " ***** ", 
+            " ** ", 
+            " ** ", 
+            " ** "
+        };
+    }
+
+    // 3. Method to generate the pattern for the letter 'S'
+    public static String[] getSPattern() {
+        return new String[] {
+            "  **** ", 
+            " ** ", 
+            " ** ", 
+            "  *** ", 
+            "    ** ", 
+            "    ** ", 
+            " **** "
+        };
+    }
+
     public static void main(String[] args) {
-        // 1. Declare and Initialize a String array for 7 lines
-        String[] bannerLines = new String[7];
+        // Calling our functions to get the data
+        String[] oPattern = getOPattern();
+        String[] pPattern = getPPattern();
+        String[] sPattern = getSPattern();
 
-        // 2. Define each line in the array using String.join
-        bannerLines[0] = String.join("", " **** ", " ", " **** ", " ", " ***** ", " ", " **** ");
-        bannerLines[1] = String.join("", " ** **", " ", " ** **", " ", " ** **", " ", " ** ");
-        bannerLines[2] = String.join("", " ** **", " ", " ** **", " ", " ** **", " ", " ** ");
-        bannerLines[3] = String.join("", " ** **", " ", " ** **", " ", " ***** ", " ", " **** ");
-        bannerLines[4] = String.join("", " ** **", " ", " ** **", " ", " ** ", " ", "    **");
-        bannerLines[5] = String.join("", " ** **", " ", " ** **", " ", " ** ", " ", "    **");
-        bannerLines[6] = String.join("", " **** ", " ", " **** ", " ", " ** ", " ", " **** ");
-
-        // 3. Use an enhanced for-loop to iterate and print
-        // "For every String 'line' inside the 'bannerLines' array..."
-        for (String line : bannerLines) {
-            System.out.println(line);
+        // Assemble each line in a loop
+        // We use i < 7 because each character is 7 lines tall
+        for (int i = 0; i < 7; i++) {
+            // Combine O + O + P + S for the current line (i)
+            System.out.println(oPattern[i] + " " + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
+        }
     }
 }
