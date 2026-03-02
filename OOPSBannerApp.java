@@ -1,6 +1,6 @@
 public class OOPSBannerApp {
 
-    // UC7: Inner Static Class to encapsulate data
+    
     static class CharacterPatternMap {
         private char character;
         private String[] pattern;
@@ -23,10 +23,10 @@ public class OOPSBannerApp {
     }
 
     public static String getCharacterPattern(char ch, CharacterPatternMap[] charMaps) {
-        // Linear search to find the matching character object
+        
         for (CharacterPatternMap map : charMaps) {
             if (map.getCharacter() == ch) {
-                // Returns the array of 7 strings for that character
+                
                 return String.join(",", map.getPattern()); 
             }
         }
@@ -37,7 +37,7 @@ public class OOPSBannerApp {
         CharacterPatternMap[] charMaps = createCharacterPatternMaps();
         String message = "OOPS";
         
-        // Print logic for UC7 (7 lines high)
+        
         for (int i = 0; i < 7; i++) {
             for (char ch : message.toCharArray()) {
                 for (CharacterPatternMap map : charMaps) {
